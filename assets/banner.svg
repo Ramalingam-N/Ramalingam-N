@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="t d">
+  <title id="t">Ramalingam N, Software Engineer</title>
+  <desc id="d">Backend and Azure integrations engineer based in Chennai, India</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1015"/>
+      <stop offset="1" stop-color="#0f1a1c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#3ECF8E" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#3ECF8E" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#ffffff" fill-opacity="0.06"/>
+    </pattern>
+    <linearGradient id="name" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#b8f5d8"/>
+    </linearGradient>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#3ECF8E"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="320" rx="16" fill="url(#bg)"/>
+  <rect width="1200" height="320" rx="16" fill="url(#dots)"/>
+  <circle cx="1010" cy="160" r="260" fill="url(#glow)"/>
+  <rect x="0.5" y="0.5" width="1199" height="319" rx="16" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+
+  <!-- left: identity -->
+  <g font-family="'Segoe UI', -apple-system, Helvetica, Arial, sans-serif">
+    <text x="64" y="92" font-family="ui-monospace, 'SF Mono', Consolas, 'Liberation Mono', monospace" font-size="16" fill="#3ECF8E" letter-spacing="1.5">~/ramalingam-n</text>
+    <text x="64" y="166" font-size="68" font-weight="700" fill="url(#name)" letter-spacing="-1.5">Ramalingam N</text>
+    <text x="66" y="210" font-size="24" fill="#c9d4dc">Software Engineer · Backend &amp; Azure integrations</text>
+    <text x="66" y="250" font-family="ui-monospace, 'SF Mono', Consolas, 'Liberation Mono', monospace" font-size="16" fill="#7f8f9a">idempotency · retries · recovery · observability</text>
+  </g>
+
+  <!-- right: event flow illustration -->
+  <g transform="translate(790,92)" font-family="ui-monospace, 'SF Mono', Consolas, 'Liberation Mono', monospace" font-size="13">
+    <!-- nodes -->
+    <rect x="0" y="0" width="110" height="46" rx="10" fill="#131c22" stroke="#3ECF8E" stroke-opacity="0.6"/>
+    <text x="55" y="28" text-anchor="middle" fill="#e6edf3">producer</text>
+
+    <rect x="150" y="0" width="110" height="46" rx="10" fill="#131c22" stroke="#3ECF8E" stroke-opacity="0.6"/>
+    <text x="205" y="28" text-anchor="middle" fill="#e6edf3">queue</text>
+
+    <rect x="300" y="0" width="110" height="46" rx="10" fill="#131c22" stroke="#3ECF8E" stroke-opacity="0.6"/>
+    <text x="355" y="28" text-anchor="middle" fill="#e6edf3">consumer</text>
+
+    <rect x="150" y="110" width="110" height="46" rx="10" fill="#131c22" stroke="#f0883e" stroke-opacity="0.7"/>
+    <text x="205" y="138" text-anchor="middle" fill="#e6edf3">dead-letter</text>
+
+    <!-- edges -->
+    <line x1="112" y1="23" x2="148" y2="23" stroke="#3ECF8E" stroke-width="2" marker-end="url(#arr)" stroke-dasharray="5 5">
+      <animate attributeName="stroke-dashoffset" from="20" to="0" dur="1.2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="262" y1="23" x2="298" y2="23" stroke="#3ECF8E" stroke-width="2" marker-end="url(#arr)" stroke-dasharray="5 5">
+      <animate attributeName="stroke-dashoffset" from="20" to="0" dur="1.2s" repeatCount="indefinite"/>
+    </line>
+    <path d="M205 48 V108" stroke="#f0883e" stroke-width="2" fill="none" stroke-dasharray="4 5"/>
+    <path d="M262 133 H355 V50" stroke="#f0883e" stroke-width="2" fill="none" stroke-dasharray="4 5" stroke-opacity="0.8"/>
+    <text x="215" y="86" fill="#f0883e" font-size="11">retries exhausted</text>
+    <text x="368" y="100" fill="#f0883e" font-size="11">replay</text>
+  </g>
+
+  <!-- accent bar -->
+  <rect x="64" y="284" width="72" height="4" rx="2" fill="#3ECF8E"/>
+</svg>

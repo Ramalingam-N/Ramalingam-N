@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="150" viewBox="0 0 1200 150" role="img" aria-label="Key facts: 2 production integrations, 47 lost invoices root-caused, 5 integrations upgraded with zero downtime, 720 plus LeetCode problems">
+  <defs>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#131b21"/>
+      <stop offset="1" stop-color="#0e1419"/>
+    </linearGradient>
+  </defs>
+  <g font-family="'Segoe UI', -apple-system, Helvetica, Arial, sans-serif">
+    <g>
+      <rect x="0.5" y="0.5" width="285" height="149" rx="14" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.09"/>
+      <rect x="24" y="24" width="28" height="3" rx="1.5" fill="#3ECF8E"/>
+      <text x="24" y="78" font-size="46" font-weight="700" fill="#ffffff">2</text>
+      <text x="24" y="104" font-size="15" fill="#c9d4dc">production Azure</text>
+      <text x="24" y="124" font-size="15" fill="#c9d4dc">integrations owned</text>
+    </g>
+    <g transform="translate(305,0)">
+      <rect x="0.5" y="0.5" width="285" height="149" rx="14" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.09"/>
+      <rect x="24" y="24" width="28" height="3" rx="1.5" fill="#3ECF8E"/>
+      <text x="24" y="78" font-size="46" font-weight="700" fill="#ffffff">47</text>
+      <text x="24" y="104" font-size="15" fill="#c9d4dc">lost invoices traced</text>
+      <text x="24" y="124" font-size="15" fill="#c9d4dc">to root cause and fixed</text>
+    </g>
+    <g transform="translate(610,0)">
+      <rect x="0.5" y="0.5" width="285" height="149" rx="14" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.09"/>
+      <rect x="24" y="24" width="28" height="3" rx="1.5" fill="#3ECF8E"/>
+      <text x="24" y="78" font-size="46" font-weight="700" fill="#ffffff">0</text>
+      <text x="24" y="104" font-size="15" fill="#c9d4dc">downtime on an SFTP</text>
+      <text x="24" y="124" font-size="15" fill="#c9d4dc">upgrade across 5 integrations</text>
+    </g>
+    <g transform="translate(914,0)">
+      <rect x="0.5" y="0.5" width="285" height="149" rx="14" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.09"/>
+      <rect x="24" y="24" width="28" height="3" rx="1.5" fill="#3ECF8E"/>
+      <text x="24" y="78" font-size="46" font-weight="700" fill="#ffffff">720+</text>
+      <text x="24" y="104" font-size="15" fill="#c9d4dc">LeetCode problems</text>
+      <text x="24" y="124" font-size="15" fill="#c9d4dc">solved in Java and SQL</text>
+    </g>
+  </g>
+</svg>

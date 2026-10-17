@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="530" viewBox="0 0 1200 530" role="img" aria-labelledby="t d">
+<title id="t">Reliable Webhook Delivery Platform architecture</title>
+<desc id="d">Producer to ingestion with Redis dedupe, transactional outbox in PostgreSQL, Kafka fast and slow lanes, dispatcher with per-endpoint circuit breakers and an inbox claim, a dead-letter store and an admin replay path through the outbox, plus a sweeper that recovers unpublished events.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1015"/><stop offset="1" stop-color="#0f1a1c"/></linearGradient>
+<pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#fff" fill-opacity="0.05"/></pattern>
+<marker id="ag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3ECF8E"/></marker>
+<marker id="ao" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#f0883e"/></marker>
+<marker id="ags" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#6ea8ff"/></marker>
+<style>
+.t{font:600 15px 'Segoe UI',-apple-system,Helvetica,Arial,sans-serif;fill:#e6edf3}
+.t2{font:600 13px 'Segoe UI',-apple-system,Helvetica,Arial,sans-serif;fill:#e6edf3}
+.s{font:12px ui-monospace,'SF Mono',Consolas,'Liberation Mono',monospace;fill:#8b9aa6}
+.l{font:12px 'Segoe UI',-apple-system,Helvetica,Arial,sans-serif}
+</style>
+</defs>
+<rect width="1200" height="530" rx="16" fill="url(#bg)"/><rect width="1200" height="530" rx="16" fill="url(#dots)"/>
+<rect x="0.5" y="0.5" width="1199" height="529" rx="16" fill="none" stroke="#fff" stroke-opacity="0.08"/>
+<rect x="30" y="100" width="150" height="90" rx="12" fill="#131b21" stroke="#3ECF8E" stroke-opacity="0.75"/><text x="105.0" y="129.0" text-anchor="middle" class="t">Producer</text><text x="105.0" y="147.0" text-anchor="middle" class="s">API-key</text><text x="105.0" y="162.0" text-anchor="middle" class="s">authorised</text>
+<rect x="230" y="100" width="150" height="90" rx="12" fill="#131b21" stroke="#3ECF8E" stroke-opacity="0.75"/><text x="305.0" y="129.0" text-anchor="middle" class="t">Ingestion</text><text x="305.0" y="147.0" text-anchor="middle" class="s">validate · sign</text><text x="305.0" y="162.0" text-anchor="middle" class="s">dedupe</text>
+<rect x="430" y="100" width="150" height="90" rx="12" fill="#131b21" stroke="#6ea8ff" stroke-opacity="0.75"/><text x="505.0" y="129.0" text-anchor="middle" class="t">PostgreSQL</text><text x="505.0" y="147.0" text-anchor="middle" class="s">event + outbox row</text><text x="505.0" y="162.0" text-anchor="middle" class="s">one transaction</text>
+<rect x="640" y="70" width="160" height="170" rx="14" fill="#10181d" stroke="#3ECF8E" stroke-opacity="0.75"/>
+<text x="720" y="94" text-anchor="middle" class="t">Kafka</text>
+<rect x="656" y="108" width="128" height="48" rx="9" fill="#16222a" stroke="#3ECF8E" stroke-opacity="0.45"/><text x="720" y="128" text-anchor="middle" class="t2">fast lane</text><text x="720" y="144" text-anchor="middle" class="s">healthy endpoints</text>
+<rect x="656" y="170" width="128" height="52" rx="9" fill="#1d1a16" stroke="#f0883e" stroke-opacity="0.55"/><text x="720" y="190" text-anchor="middle" class="t2">slow lane</text><text x="720" y="206" text-anchor="middle" class="s">non-blocking backoff</text>
+<rect x="850" y="100" width="160" height="90" rx="12" fill="#131b21" stroke="#3ECF8E" stroke-opacity="0.75"/><text x="930.0" y="129.0" text-anchor="middle" class="t">Dispatcher</text><text x="930.0" y="147.0" text-anchor="middle" class="s">circuit breaker</text><text x="930.0" y="162.0" text-anchor="middle" class="s">per endpoint</text>
+<rect x="1050" y="100" width="120" height="90" rx="12" fill="#131b21" stroke="#3ECF8E" stroke-opacity="0.75"/><text x="1110.0" y="129.0" text-anchor="middle" class="t">Subscriber</text><text x="1110.0" y="147.0" text-anchor="middle" class="s">HMAC-signed</text><text x="1110.0" y="162.0" text-anchor="middle" class="s">delivery</text>
+<rect x="250" y="16" width="110" height="44" rx="12" fill="#131b21" stroke="#6ea8ff" stroke-opacity="0.75"/><text x="305.0" y="43.0" text-anchor="middle" class="t">Redis</text>
+<rect x="200" y="320" width="160" height="70" rx="12" fill="#131b21" stroke="#3ECF8E" stroke-opacity="0.75"/><text x="280.0" y="346.0" text-anchor="middle" class="t">Admin</text><text x="280.0" y="364.0" text-anchor="middle" class="s">query · replay</text>
+<rect x="480" y="320" width="170" height="70" rx="12" fill="#131b21" stroke="#3ECF8E" stroke-opacity="0.75"/><text x="565.0" y="339.0" text-anchor="middle" class="t">Sweeper</text><text x="565.0" y="357.0" text-anchor="middle" class="s">FOR UPDATE</text><text x="565.0" y="372.0" text-anchor="middle" class="s">SKIP LOCKED</text>
+<rect x="840" y="320" width="140" height="70" rx="12" fill="#131b21" stroke="#6ea8ff" stroke-opacity="0.75"/><text x="910.0" y="339.0" text-anchor="middle" class="t">Inbox</text><text x="910.0" y="357.0" text-anchor="middle" class="s">claim (event_id,</text><text x="910.0" y="372.0" text-anchor="middle" class="s">endpoint_id)</text>
+<rect x="1010" y="320" width="150" height="70" rx="12" fill="#131b21" stroke="#f0883e" stroke-opacity="0.75"/><text x="1085.0" y="339.0" text-anchor="middle" class="t">Dead-letter store</text><text x="1085.0" y="357.0" text-anchor="middle" class="s">queryable</text><text x="1085.0" y="372.0" text-anchor="middle" class="s">PostgreSQL</text>
+<path d="M180 145H228" fill="none" stroke="#3ECF8E" stroke-width="2" marker-end="url(#ag)"/>
+<path d="M380 145H428" fill="none" stroke="#3ECF8E" stroke-width="2" marker-end="url(#ag)"/>
+<text x="316" y="84" text-anchor="start" class="l" fill="#8b9aa6">dedupe</text>
+<path d="M305 98V62" fill="none" stroke="#6ea8ff" stroke-width="2" marker-end="url(#ag)" marker-start="url(#ags)"/>
+<path d="M580 130H638" fill="none" stroke="#3ECF8E" stroke-width="2" marker-end="url(#ag)"/>
+<text x="609" y="120" text-anchor="middle" class="l" fill="#8b9aa6">after commit</text>
+<path d="M800 145H848" fill="none" stroke="#3ECF8E" stroke-width="2" marker-end="url(#ag)"/>
+<path d="M1010 145H1048" fill="none" stroke="#3ECF8E" stroke-width="2" marker-end="url(#ag)"/>
+<path d="M565 318V192" fill="none" stroke="#3ECF8E" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ag)"/>
+<text x="575" y="255" text-anchor="start" class="l" fill="#8b9aa6">unpublished</text>
+<path d="M650 355H720V242" fill="none" stroke="#3ECF8E" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ag)"/>
+<text x="735" y="300" text-anchor="start" class="l" fill="#8b9aa6">recover after restart</text>
+<path d="M910 192V318" fill="none" stroke="#6ea8ff" stroke-width="2" marker-end="url(#ag)"/>
+<text x="920" y="300" text-anchor="start" class="l" fill="#8b9aa6">inbox claim</text>
+<path d="M985 192V255H1085V318" fill="none" stroke="#f0883e" stroke-width="2" marker-end="url(#ao)"/>
+<text x="1000" y="247" text-anchor="start" class="l" fill="#f0883e">retries exhausted</text>
+<path d="M360 355H455V192" fill="none" stroke="#3ECF8E" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ag)"/>
+<text x="372" y="376" text-anchor="start" class="l" fill="#8b9aa6">replay via outbox</text>
+<path d="M280 392V470H1085V392" fill="none" stroke="#f0883e" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="680" y="462" text-anchor="middle" class="l" fill="#f0883e">query / replay dead letters</text>
+<circle cx="36" cy="505" r="5" fill="#3ECF8E"/><text x="48" y="509" class="l" fill="#8b9aa6">service / success path</text>
+<circle cx="240" cy="505" r="5" fill="#6ea8ff"/><text x="252" y="509" class="l" fill="#8b9aa6">data store</text>
+<circle cx="360" cy="505" r="5" fill="#f0883e"/><text x="372" y="509" class="l" fill="#8b9aa6">failure path</text>
+</svg>
